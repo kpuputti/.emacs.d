@@ -2,6 +2,42 @@
 
 My Emacs configuration.
 
+** TODO [0%]
+
+- [ ] add default configuration
+  - [ ] setup package archives
+  - [ ] setup OSX keys
+  - [ ] fix suspending in OSX
+  - [ ] fix OSX exec path
+  - [ ] hide visual noise
+  - [ ] setup generated files
+  - [ ] setup separate custom file
+- [ ] init use-package
+- [ ] setup theme, font, colors, smart-mode-line
+- [ ] setup web-mode
+- [ ] setup js, jsx, ts, json, js-doc, tern
+- [ ] setup css, less, scss, rainbow-mode
+- [ ] setup magit and git-gutter-fringe
+- [ ] setup projectile
+- [ ] setup helm
+- [ ] setup flycheck
+- [ ] setup anzu
+- [ ] setup smartparens
+- [ ] setup org-present
+- [ ] setup winner-mode
+- [ ] setup ace-window
+- [ ] setup undo-tree
+- [ ] setup scala, sbt, ensime
+- [ ] setup clojure
+- [ ] setup racket (geiser)
+- [ ] setup go-mode
+- [ ] setup haskell-mode
+- [ ] setup markdown-mode
+- [ ] setup feature-mode
+- [ ] setup multiple-cursors
+- [ ] setup expand-region
+- [ ] setup volatile-highlights
+
 ** Resources
 
 - [[https://github.com/technomancy/better-defaults][technomancy/better-defaults]]
