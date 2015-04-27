@@ -1,5 +1,19 @@
 * .emacs.d
 
+My Emacs configuration.
+
+** Resources
+
+- [[https://github.com/technomancy/better-defaults][technomancy/better-defaults]]
+- [[https://github.com/technomancy/emacs-starter-kit][technomancy/emacs-starter-kit]]
+- [[https://github.com/bbatsov/prelude][bbatsov/prelude]]
+- [[https://github.com/overtone/emacs-live][overtone/emacs-live]]
+- [[https://github.com/purcell/emacs.d/][purcell/emacs.d]]
+- [[https://github.com/lunaryorn/.emacs.d][lunaryorn/.emacs.d]]
+- [[https://github.com/jwiegley/dot-emacs][jwiegley/dot-emacs]]
+
+** Load time measurements
+
 | Setup                                  | M-x emacs-init-time |
 |----------------------------------------+---------------------|
 | no init file                           | 0.6 seconds         |
