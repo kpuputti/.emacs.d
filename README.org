@@ -1,1 +1,7 @@
 * .emacs.d
+
+| Setup                                  | M-x emacs-init-time |
+|----------------------------------------+---------------------|
+| no init file                           | 0.6 seconds         |
+| empty init file                        | 0.6 seconds         |
+| with empty defautls and utils required | 0.6 seconds         |
