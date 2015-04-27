@@ -4,3 +4,5 @@
 
 (require 'init-utils)
 (require 'init-defaults)
+
+(provide 'init)
