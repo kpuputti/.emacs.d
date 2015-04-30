@@ -2,17 +2,16 @@
 
 My Emacs configuration.
 
-** TODO [0%]
+** TODO [3%] Tasks
 
-- [ ] add default configuration
-  - [ ] setup package archives
-  - [ ] setup OSX keys
-  - [ ] fix suspending in OSX
-  - [ ] fix OSX exec path
-  - [ ] hide visual noise
-  - [ ] setup generated files
-  - [ ] setup separate custom file
+- [X] add default configuration
+  - [X] setup package archives
+  - [X] setup OSX keys
+  - [X] hide visual noise
+  - [X] setup generated files
+  - [X] setup separate custom file
 - [ ] init use-package
+- [ ] fix OSX exec path
 - [ ] setup theme, font, colors, smart-mode-line
 - [ ] setup web-mode
 - [ ] setup js, jsx, ts, json, js-doc, tern
@@ -37,6 +36,7 @@ My Emacs configuration.
 - [ ] setup multiple-cursors
 - [ ] setup expand-region
 - [ ] setup volatile-highlights
+- [ ] setup engine-mode
 
 ** Resources
 
@@ -55,3 +55,4 @@ My Emacs configuration.
 | no init file                           | 0.6 seconds         |
 | empty init file                        | 0.6 seconds         |
 | with empty defaults and utils required | 0.6 seconds         |
+| with defaults config                   | 0.7 seconds         |
