@@ -5,4 +5,7 @@
 (require 'init-utils)
 (require 'init-defaults)
 
+(load custom-file 'no-error 'no-message)
+
 (provide 'init)
+;;; init.el ends here
