@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [3%] Tasks
+** TODO [45%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -10,33 +10,36 @@ My Emacs configuration.
   - [X] hide visual noise
   - [X] setup generated files
   - [X] setup separate custom file
-- [ ] init use-package
-- [ ] fix OSX exec path
-- [ ] setup theme, font, colors, smart-mode-line
-- [ ] setup web-mode
-- [ ] setup js, jsx, ts, json, js-doc, tern
-- [ ] setup css, less, scss, rainbow-mode
-- [ ] setup magit and git-gutter-fringe
-- [ ] setup projectile
-- [ ] setup helm
-- [ ] setup flycheck
-- [ ] setup anzu
-- [ ] setup smartparens
-- [ ] setup org-present
-- [ ] setup winner-mode
-- [ ] setup ace-window
-- [ ] setup undo-tree
-- [ ] setup scala, sbt, ensime
-- [ ] setup clojure
-- [ ] setup racket (geiser)
-- [ ] setup go-mode
-- [ ] setup haskell-mode
-- [ ] setup markdown-mode
-- [ ] setup feature-mode
-- [ ] setup multiple-cursors
-- [ ] setup expand-region
-- [ ] setup volatile-highlights
-- [ ] setup engine-mode
+- [X] init use-package
+- [X] fix OSX exec path
+- [X] theme
+- [X] font
+- [X] ace-window
+- [X] winner-mode
+- [X] undo-tree
+- [X] expand-region
+- [X] multiple-cursors
+- [X] volatile-highlights
+- [X] anzu
+- [X] magit
+- [X] git-gutter-fringe
+- [ ] smart-mode-line
+- [ ] projectile
+- [ ] helm
+- [ ] flycheck
+- [ ] web-mode
+- [ ] js, jsx, ts, json, js-doc, tern
+- [ ] css, less, scss, rainbow-mode
+- [ ] smartparens
+- [ ] org-present
+- [ ] scala, sbt, ensime
+- [ ] clojure
+- [ ] racket (geiser)
+- [ ] go-mode
+- [ ] haskell-mode
+- [ ] markdown-mode
+- [ ] feature-mode
+- [ ] engine-mode
 
 ** Resources
 
@@ -50,9 +53,12 @@ My Emacs configuration.
 
 ** Load time measurements
 
-| Setup                                  | M-x emacs-init-time |
-|----------------------------------------+---------------------|
-| no init file                           | 0.6 seconds         |
-| empty init file                        | 0.6 seconds         |
-| with empty defaults and utils required | 0.6 seconds         |
-| with defaults config                   | 0.7 seconds         |
+| Setup                                                         | M-x emacs-init-time |
+|---------------------------------------------------------------+---------------------|
+| no init file                                                  | 0.6 seconds         |
+| empty init file                                               | 0.6 seconds         |
+| with empty defaults and utils required                        | 0.6 seconds         |
+| with defaults config                                          | 0.7 seconds         |
+| with package init and use-package                             | 0.8 seconds         |
+| with color theme setup (.elc files deleted due to bug in pkg) | 1.5 seconds         |
+| with bunch of packages                                        | 1.8 seconds         |

@@ -13,6 +13,9 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
 (setq uniquify-buffer-name-style 'forward)
 
 (setq-default save-place t)
@@ -70,15 +73,17 @@
       savehist-file (concat my-gen-dir "history"))
 (savehist-mode 1)
 
+;; Save bookmarks every time one is added.
+(setq bookmark-default-file (concat my-gen-dir "bookmarks.el"))
+(defadvice bookmark-set (after save-bookmarks-automatically activate)
+  (bookmark-save))
+
 ;; Automatically refresh buffers when the underlying file changes.
 (global-auto-revert-mode t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(setq mac-option-modifier nil
-      mac-command-modifier 'meta
-
-      font-lock-maximum-decoration t
+(setq font-lock-maximum-decoration t
       color-theme-is-global t
 
       inhibit-startup-screen t
@@ -93,7 +98,6 @@
       ediff-window-setup-function 'ediff-setup-windows-plain
 
       save-place-file (concat my-gen-dir "places")
-      bookmark-default-file (concat my-gen-dir "bookmarks.el")
       custom-file (concat my-gen-dir "custom.el")
 
       ;; Backups
@@ -119,8 +123,14 @@
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; Font
+(when window-system
+  (add-to-list 'default-frame-alist '(font . "Source Code Pro")))
+
+;; OSX specific setup.
+(when is-osx
+  (setq mac-option-modifier nil
+        mac-command-modifier 'meta))
 
 (provide 'init-defaults)
 ;;; init-defaults.el ends here
