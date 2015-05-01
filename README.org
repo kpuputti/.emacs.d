@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [45%] Tasks
+** TODO [53%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -23,15 +23,16 @@ My Emacs configuration.
 - [X] anzu
 - [X] magit
 - [X] git-gutter-fringe
+- [X] ag
+- [X] projectile
+- [X] flycheck
+- [ ] smartparens
+- [ ] org-present
 - [ ] smart-mode-line
-- [ ] projectile
 - [ ] helm
-- [ ] flycheck
 - [ ] web-mode
 - [ ] js, jsx, ts, json, js-doc, tern
 - [ ] css, less, scss, rainbow-mode
-- [ ] smartparens
-- [ ] org-present
 - [ ] scala, sbt, ensime
 - [ ] clojure
 - [ ] racket (geiser)
@@ -62,3 +63,4 @@ My Emacs configuration.
 | with package init and use-package                             | 0.8 seconds         |
 | with color theme setup (.elc files deleted due to bug in pkg) | 1.5 seconds         |
 | with bunch of packages                                        | 1.8 seconds         |
+| with moar packages                                            | 2.1 seconds         |

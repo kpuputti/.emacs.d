@@ -55,6 +55,18 @@
   :init (setq git-gutter-fr:side 'right-fringe)
   :config (global-git-gutter-mode t))
 
+(use-package ag
+  :ensure t)
+
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode))
+
+(use-package flycheck
+  :ensure t
+  :init (setq flycheck-highlighting-mode 'nil)
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))
+
 (load custom-file 'no-error 'no-message)
 
 (provide 'init)
