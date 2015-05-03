@@ -39,6 +39,7 @@
 
 (use-package undo-tree
   :ensure t
+  :diminish undo-tree-mode
   :config (global-undo-tree-mode))
 
 (use-package expand-region
@@ -51,10 +52,12 @@
 
 (use-package volatile-highlights
   :ensure t
+  :diminish volatile-highlights-mode
   :config (volatile-highlights-mode t))
 
 (use-package anzu
   :ensure t
+  :diminish anzu-mode
   :config (global-anzu-mode +1))
 
 (use-package magit
@@ -66,6 +69,7 @@
 
 (use-package git-gutter-fringe
   :ensure t
+  :diminish git-gutter-mode
   :init (setq git-gutter-fr:side 'right-fringe)
   :config (global-git-gutter-mode t))
 
@@ -83,6 +87,7 @@
 
 (use-package smartparens
   :ensure t
+  :diminish smartparens-mode
   :config
   (require 'smartparens-config)
   (smartparens-global-mode 1))
