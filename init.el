@@ -67,6 +67,12 @@
   :init (setq flycheck-highlighting-mode 'nil)
   :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
+(use-package smartparens
+  :ensure t
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode 1))
+
 (load custom-file 'no-error 'no-message)
 
 (provide 'init)
