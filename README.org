@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [48%] Tasks
+** TODO [51%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -27,7 +27,7 @@ My Emacs configuration.
 - [X] projectile
 - [X] flycheck
 - [X] smartparens
-- [ ] smart-mode-line
+- [X] smart-mode-line
 - [ ] helm
 - [ ] web-mode
 - [ ] js, jsx, ts, json, js-doc, tern

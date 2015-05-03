@@ -23,6 +23,9 @@
   (load-theme 'solarized t)
   (set-frame-parameter nil 'background-mode 'dark)
   (enable-theme 'solarized))
+(use-package smart-mode-line
+  :ensure t
+  :init (sml/setup))
 
 (use-package ace-window
   :ensure t
