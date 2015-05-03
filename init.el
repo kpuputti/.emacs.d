@@ -16,13 +16,19 @@
   :if (memq window-system '(mac ns))
   :config (exec-path-from-shell-initialize))
 
-(use-package color-theme-solarized
+(use-package solarized-theme
   :ensure t
   :if window-system
+  :init
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-use-variable-pitch nil)
+  (setq solarized-use-less-bold t)
+  (setq solarized-emphasize-indicators nil)
+  (setq solarized-scale-org-headlines nil)
   :config
-  (load-theme 'solarized t)
-  (set-frame-parameter nil 'background-mode 'dark)
-  (enable-theme 'solarized))
+  (load-theme 'solarized-dark t)
+  (set-face-attribute 'region nil :background "#fdf6e3" :foreground "#d33682"))
+
 (use-package smart-mode-line
   :ensure t
   :init (sml/setup))
