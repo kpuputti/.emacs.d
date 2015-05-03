@@ -6,6 +6,11 @@
 (require 'init-defaults)
 (require 'init-package)
 
+(use-package whitespace
+  :diminish global-whitespace-mode
+  :init (setq-default whitespace-style '(face tab-mark trailing))
+  :config (global-whitespace-mode 1))
+
 (use-package exec-path-from-shell
   :ensure t
   :if (memq window-system '(mac ns))

@@ -38,10 +38,6 @@
 (size-indication-mode t)
 (blink-cursor-mode -1)
 
-;; Enable whitespace-mode, but keep it subtle.
-(global-whitespace-mode 1)
-(setq-default whitespace-style '(face tab-mark trailing))
-
 ;; Disable modeline 3D highlighting.
 (set-face-attribute 'mode-line nil :box nil)
 
