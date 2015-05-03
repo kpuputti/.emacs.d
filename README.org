@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [53%] Tasks
+** TODO [48%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -41,6 +41,12 @@ My Emacs configuration.
 - [ ] feature-mode
 - [ ] engine-mode
 - [ ] org-present
+- [ ] kill/copy current line if region is empty
+- [ ] M-; comments current line if region is empty
+- [ ] open magit in full frame, go back to previous window
+  configuration when exiting magit
+- [ ] expand/contract json region
+- [ ] newline and indent when RET between pairs
 
 ** Resources
 
