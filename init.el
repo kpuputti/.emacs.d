@@ -145,22 +145,20 @@
   :ensure t
   :mode ("\\.ts\\'" . typescript-mode))
 
-(defun my-css-mode-hook () (rainbow-mode t))
-
-(use-package rainbow-mode
-  :ensure t
-  :diminish rainbow-mode
+(use-package css-mode
+  :init (setq css-indent-offset 2)
   :config
-  (add-hook 'css-mode-hook 'my-css-mode-hook))
+  (use-package rainbow-mode
+    :ensure t
+    :diminish rainbow-mode
+    :config
+    (add-hook 'css-mode-hook (lambda () (rainbow-mode t)))))
 
 (use-package less-css-mode
-  :ensure t
-  :config
-  (add-hook 'less-css-mode-hook 'my-css-mode-hook))
+  :ensure t)
 
 (use-package scss-mode
-  :ensure t
-  :config)
+  :ensure t)
 
 (load custom-file 'no-error 'no-message)
 
