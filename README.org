@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [62%] Tasks
+** TODO [59%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -32,15 +32,17 @@ My Emacs configuration.
 - [X] markdown-mode
 - [X] json-mode
 - [X] js2-mode
+- [X] js2-refactor
+- [X] js-doc
 - [X] tern
 - [X] jsx-mode (but use web-mode for .jsx files)
 - [X] web-mode (+ use expand-region binding with web-mode's own expand function)
-- [X] js-doc
 - [X] typescript
 - [X] less-css-mode
 - [X] scss-mode
 - [X] rainbow-mode for css, less, and scss files
 - [ ] helm (+ helm-projectile, helm-ag)
+- [ ] yasnippet
 - [ ] scala, sbt, ensime
 - [ ] clojure (CIDER)
 - [ ] racket (geiser)

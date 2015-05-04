@@ -122,9 +122,14 @@
     :config
     (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
   (use-package js-doc
-    :ensure t))
+    :ensure t)
+  (use-package js2-refactor
+    :ensure t
+    :diminish js2-refactor-mode
+    :config
+    (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    (js2r-add-keybindings-with-prefix "C-c C-m")))
 
-;; TODO: use js2 flycheck linters with jsx files
 (use-package web-mode
   :ensure t
   :mode (("\\.html?\\'" . web-mode)
