@@ -62,6 +62,7 @@
 
 (use-package magit
   :ensure t
+  :diminish magit-auto-revert-mode
   :init (setq magit-last-seen-setup-instructions "1.4.0")
   :bind (("C-c g s" . magit-status)
          ("C-c g l" . magit-file-log)
@@ -91,6 +92,75 @@
   :config
   (require 'smartparens-config)
   (smartparens-global-mode 1))
+
+(use-package restclient
+  :ensure t)
+
+(use-package markdown-mode
+  :ensure t
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)
+         ("README\\.md\\'" . gfm-mode)))
+
+(use-package json-mode
+  :ensure t)
+
+(use-package js2-mode
+  :ensure t
+  :mode "\\.js\\'"
+  :init
+  (setq js2-highlight-level 3
+        js2-basic-offset 2
+        js2-allow-rhino-new-expr-initializer nil
+        js2-include-node-externs t)
+  :config
+  (rename-modeline "js2-mode" js2-mode "JS2")
+  (add-hook 'js2-mode-hook 'subword-mode)
+  (use-package tern
+    :ensure t
+    :diminish tern-mode
+    :config
+    (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
+  (use-package js-doc
+    :ensure t))
+
+;; TODO: use js2 flycheck linters with jsx files
+(use-package web-mode
+  :ensure t
+  :mode (("\\.html?\\'" . web-mode)
+         ("\\.ejs\\'" . web-mode)
+         ("\\.jsx\\'" . web-mode))
+  :bind ("C-=" . web-mode-mark-and-expand)
+  :init
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2
+        web-mode-style-padding 2
+        web-mode-script-padding 2))
+
+(use-package jsx-mode
+  :ensure t)
+
+(use-package tss
+  :ensure t
+  :mode ("\\.ts\\'" . typescript-mode))
+
+(defun my-css-mode-hook () (rainbow-mode t))
+
+(use-package rainbow-mode
+  :ensure t
+  :diminish rainbow-mode
+  :config
+  (add-hook 'css-mode-hook 'my-css-mode-hook))
+
+(use-package less-css-mode
+  :ensure t
+  :config
+  (add-hook 'less-css-mode-hook 'my-css-mode-hook))
+
+(use-package scss-mode
+  :ensure t
+  :config)
 
 (load custom-file 'no-error 'no-message)
 

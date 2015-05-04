@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [51%] Tasks
+** TODO [62%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -28,25 +28,42 @@ My Emacs configuration.
 - [X] flycheck
 - [X] smartparens
 - [X] smart-mode-line
-- [ ] helm
-- [ ] web-mode
-- [ ] js, jsx, ts, json, js-doc, tern
-- [ ] css, less, scss, rainbow-mode
+- [X] restclient
+- [X] markdown-mode
+- [X] json-mode
+- [X] js2-mode
+- [X] tern
+- [X] jsx-mode (but use web-mode for .jsx files)
+- [X] web-mode (+ use expand-region binding with web-mode's own expand function)
+- [X] js-doc
+- [X] typescript
+- [X] less-css-mode
+- [X] scss-mode
+- [X] rainbow-mode for css, less, and scss files
+- [ ] helm (+ helm-projectile, helm-ag)
 - [ ] scala, sbt, ensime
-- [ ] clojure
+- [ ] clojure (CIDER)
 - [ ] racket (geiser)
 - [ ] go-mode
 - [ ] haskell-mode
-- [ ] markdown-mode
 - [ ] feature-mode
 - [ ] engine-mode
 - [ ] org-present
+- [ ] fix non-hex color highlighting in rainbow-mode
+- [ ] fix sass executable warnings in scss-mode
+- [ ] run js2 flycheckers when in .jsx file in web-mode
+- [ ] readable colors for org-mode TODO headlines
 - [ ] kill/copy current line if region is empty
 - [ ] M-; comments current line if region is empty
 - [ ] open magit in full frame, go back to previous window
   configuration when exiting magit
-- [ ] expand/contract json region
+- [ ] expand/contract json region (using python -mjson.tool ?)
 - [ ] newline and indent when RET between pairs
+- [ ] defer builtin package requires that use IO to make startup
+  faster (bookmarks, save-place, recentf, etc.)
+- [ ] add file suffix pairs for switching between similar files with
+  projectile-find-other-file (e.g. Component.jsx <-> Component.less)
+- [ ] function to evaluate last sexp and replace it with the value
 
 ** Resources
 
