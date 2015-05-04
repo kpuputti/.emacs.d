@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [59%] Tasks
+** TODO [58%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -41,7 +41,8 @@ My Emacs configuration.
 - [X] less-css-mode
 - [X] scss-mode
 - [X] rainbow-mode for css, less, and scss files
-- [ ] helm (+ helm-projectile, helm-ag)
+- [ ] helm (+ helm-projectile, helm-ag, extra helm goodies)
+- [ ] autocompletion (company-mode ?)
 - [ ] yasnippet
 - [ ] scala, sbt, ensime
 - [ ] clojure (CIDER)
