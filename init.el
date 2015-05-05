@@ -136,13 +136,13 @@
   :mode (("\\.html?\\'" . web-mode)
          ("\\.ejs\\'" . web-mode)
          ("\\.jsx\\'" . web-mode))
-  :bind ("C-=" . web-mode-mark-and-expand)
   :init
   (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2
         web-mode-style-padding 2
-        web-mode-script-padding 2))
+        web-mode-script-padding 2)
+  (add-hook 'web-mode-hook (lambda () (local-set-key (kbd "C-=") 'web-mode-mark-and-expand))))
 
 (use-package jsx-mode
   :ensure t)
