@@ -112,6 +112,7 @@
   (setq js2-highlight-level 3
         js2-basic-offset 2
         js2-allow-rhino-new-expr-initializer nil
+        js2-global-externs '("describe" "before" "beforeEach" "after" "afterEach" "it")
         js2-include-node-externs t)
   :config
   (rename-modeline "js2-mode" js2-mode "JS2")
