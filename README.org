@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** TODO [58%] Tasks
+** TODO [57%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -52,6 +52,7 @@ My Emacs configuration.
 - [ ] feature-mode
 - [ ] engine-mode
 - [ ] org-present
+- [ ] pin smartparens to the melpa stable version
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
 - [ ] run js2 flycheckers when in .jsx file in web-mode
