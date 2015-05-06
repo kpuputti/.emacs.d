@@ -122,8 +122,9 @@
 
 (use-package flycheck
   :ensure t
-  :init (setq flycheck-highlighting-mode 'nil)
-  :config (add-hook 'after-init-hook #'global-flycheck-mode))
+  :init
+  (setq flycheck-highlighting-mode 'nil)
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package smartparens
   :ensure t
@@ -154,21 +155,22 @@
         js2-allow-rhino-new-expr-initializer nil
         js2-global-externs '("describe" "before" "beforeEach" "after" "afterEach" "it")
         js2-include-node-externs t)
-  :config
-  (rename-modeline "js2-mode" js2-mode "JS2")
   (add-hook 'js2-mode-hook 'subword-mode)
+  (rename-modeline "js2-mode" js2-mode "JS2")
+  :config
   (use-package tern
     :ensure t
     :diminish tern-mode
-    :config
+    :init
     (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
   (use-package js-doc
     :ensure t)
   (use-package js2-refactor
     :ensure t
     :diminish js2-refactor-mode
-    :config
+    :init
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    :config
     (js2r-add-keybindings-with-prefix "C-c C-m")))
 
 (use-package web-mode
@@ -185,7 +187,8 @@
   (add-hook 'web-mode-hook (lambda () (local-set-key (kbd "C-=") 'web-mode-mark-and-expand))))
 
 (use-package jsx-mode
-  :ensure t)
+  :ensure t
+  :init (setq jsx-indent-level 2))
 
 (use-package tss
   :ensure t
@@ -197,7 +200,7 @@
   (use-package rainbow-mode
     :ensure t
     :diminish rainbow-mode
-    :config
+    :init
     (add-hook 'css-mode-hook (lambda () (rainbow-mode t)))))
 
 (use-package less-css-mode
