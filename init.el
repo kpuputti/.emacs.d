@@ -127,6 +127,7 @@
 
 (use-package smartparens
   :ensure t
+  :disabled t
   :diminish smartparens-mode
   :config
   (require 'smartparens-config)
