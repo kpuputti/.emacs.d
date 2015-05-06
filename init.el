@@ -102,9 +102,23 @@
 (use-package ag
   :ensure t)
 
+(use-package helm
+  :ensure t
+  :config
+  (require 'helm-config)
+  (helm-mode 1)
+  (use-package helm-ag
+    :ensure t
+    :bind ("C-c h a" . helm-ag))
+  (use-package helm-spotify
+    :ensure t))
+
 (use-package projectile
   :ensure t
-  :config (projectile-global-mode))
+  :config
+  (projectile-global-mode)
+  (use-package helm-projectile
+    :ensure t))
 
 (use-package flycheck
   :ensure t
