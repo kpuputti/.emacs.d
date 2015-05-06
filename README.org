@@ -41,10 +41,13 @@ My Emacs configuration.
 - [X] less-css-mode
 - [X] scss-mode
 - [X] rainbow-mode for css, less, and scss files
-- [ ] helm (+ helm-projectile, helm-ag, extra helm goodies)
-- [ ] autocompletion (company-mode ?)
+- [X] helm (+ helm-projectile, helm-ag, helm-spotify, helm-package, etc.)
+- [X] highlight selected buffer modeline better
+- [X] ace-jump-mode
+- [ ] autocompletion (ac vs. company-mode ?x)
 - [ ] yasnippet
 - [ ] scala, sbt, ensime
+- [ ] coffee-mode
 - [ ] clojure (CIDER)
 - [ ] racket (geiser)
 - [ ] go-mode
@@ -52,6 +55,7 @@ My Emacs configuration.
 - [ ] feature-mode
 - [ ] engine-mode
 - [ ] org-present
+- [ ] turn on tern-mode for .jsx files
 - [ ] pin smartparens to the melpa stable version
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
@@ -68,6 +72,7 @@ My Emacs configuration.
 - [ ] add file suffix pairs for switching between similar files with
   projectile-find-other-file (e.g. Component.jsx <-> Component.less)
 - [ ] function to evaluate last sexp and replace it with the value
+- [ ] remove confirm when creating temp buffers
 
 ** Resources
 
