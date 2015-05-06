@@ -23,14 +23,32 @@
   :ensure t
   :if window-system
   :init
-  (setq solarized-distinct-fringe-background t)
-  (setq solarized-use-variable-pitch nil)
-  (setq solarized-use-less-bold t)
-  (setq solarized-emphasize-indicators nil)
-  (setq solarized-scale-org-headlines nil)
+  (setq solarized-distinct-fringe-background t
+        solarized-use-variable-pitch nil
+        solarized-use-less-bold t
+        solarized-emphasize-indicators nil
+        solarized-scale-org-headlines nil
+        color-base03    "#002b36"
+        color-base02    "#073642"
+        color-base01    "#586e75"
+        color-base00    "#657b83"
+        color-base0     "#839496"
+        color-base1     "#93a1a1"
+        color-base2     "#eee8d5"
+        color-base3     "#fdf6e3"
+        color-yellow    "#b58900"
+        color-orange    "#cb4b16"
+        color-red       "#dc322f"
+        color-magenta   "#d33682"
+        color-violet    "#6c71c4"
+        color-blue      "#268bd2"
+        color-cyan      "#2aa198"
+        color-green     "#859900"
+        color-mode-line-background "#084150")
   :config
   (load-theme 'solarized-dark t)
-  (set-face-attribute 'region nil :background "#fdf6e3" :foreground "#d33682"))
+  (set-face-attribute 'region nil :background color-base3 :foreground color-magenta)
+  (set-face-attribute 'mode-line nil :background color-mode-line-background))
 
 (use-package smart-mode-line
   :ensure t
