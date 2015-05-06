@@ -6,6 +6,9 @@
 (require 'init-defaults)
 (require 'init-package)
 
+(use-package misc
+  :bind ("M-z" . zap-up-to-char))
+
 (use-package whitespace
   :diminish global-whitespace-mode
   :init (setq-default whitespace-style '(face tab-mark trailing))
