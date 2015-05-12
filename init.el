@@ -158,6 +158,7 @@
         js2-global-externs '("describe" "before" "beforeEach" "after" "afterEach" "it")
         js2-include-node-externs t)
   (add-hook 'js2-mode-hook 'subword-mode)
+  (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
   (rename-modeline "js2-mode" js2-mode "JS2")
   :config
   (use-package tern
