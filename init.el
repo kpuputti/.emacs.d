@@ -95,6 +95,7 @@
 
 (use-package git-gutter-fringe
   :ensure t
+  :disabled t
   :diminish git-gutter-mode
   :init (setq git-gutter-fr:side 'right-fringe)
   :config (global-git-gutter-mode t))
