@@ -104,6 +104,8 @@
 
 (use-package helm
   :ensure t
+  :diminish helm-mode
+  :bind ("C-c i" . helm-imenu)
   :config
   (require 'helm-config)
   (helm-mode 1)
