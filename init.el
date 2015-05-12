@@ -212,6 +212,16 @@
 (use-package scss-mode
   :ensure t)
 
+(use-package scala-mode2
+  :ensure t
+  :config
+  (use-package sbt-mode
+    :ensure t)
+  (use-package ensime
+    :ensure t
+    :init
+    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+
 (load custom-file 'no-error 'no-message)
 
 (provide 'init)
