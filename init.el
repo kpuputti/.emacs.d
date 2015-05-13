@@ -175,7 +175,9 @@
         js2-allow-rhino-new-expr-initializer nil
         js2-global-externs '("describe" "before" "beforeEach" "after" "afterEach" "it")
         js2-include-node-externs t)
-  (add-hook 'js2-mode-hook 'subword-mode)
+  (add-hook 'js2-mode-hook (lambda ()
+                             (subword-mode 1)
+                             (diminish 'subword-mode)))
   (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
   (rename-modeline "js2-mode" js2-mode "JS2")
   :config
@@ -183,7 +185,7 @@
     :ensure t
     :diminish tern-mode
     :init
-    (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
+    (add-hook 'js2-mode-hook 'tern-mode))
   (use-package js-doc
     :ensure t)
   (use-package js2-refactor
