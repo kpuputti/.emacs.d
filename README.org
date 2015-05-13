@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [60%] Tasks
+** TODO [61%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -66,7 +66,7 @@ the actions. You might want to restart Emacs after finishing.
 - [X] ace-jump-mode
 - [X] scala, sbt, ensime
 - [X] autocompletion (ac vs. company-mode ?x)
-- [ ] yasnippet
+- [X] yasnippet
 - [ ] coffee-mode
 - [ ] clojure (CIDER)
 - [ ] racket (geiser)
@@ -75,6 +75,8 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] feature-mode
 - [ ] engine-mode
 - [ ] org-present
+- [ ] configure yasnippet properly
+- [ ] add extra snippet packages (mocha, react)
 - [ ] turn on tern-mode for .jsx files
 - [ ] pin smartparens to the melpa stable version
 - [ ] fix non-hex color highlighting in rainbow-mode

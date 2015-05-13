@@ -94,6 +94,14 @@
     :ensure t
     :init (add-to-list 'company-backends 'company-tern)))
 
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :init
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
+  :config
+  (yas-reload-all))
+
 (use-package magit
   :ensure t
   :diminish magit-auto-revert-mode
