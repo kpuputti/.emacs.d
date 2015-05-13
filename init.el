@@ -85,6 +85,15 @@
   :diminish anzu-mode
   :config (global-anzu-mode +1))
 
+(use-package company
+  :ensure t
+  :diminish company-mode
+  :init (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  (use-package company-tern
+    :ensure t
+    :init (add-to-list 'company-backends 'company-tern)))
+
 (use-package magit
   :ensure t
   :diminish magit-auto-revert-mode

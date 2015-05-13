@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [59%] Tasks
+** TODO [60%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -65,7 +65,7 @@ the actions. You might want to restart Emacs after finishing.
 - [X] highlight selected buffer modeline better
 - [X] ace-jump-mode
 - [X] scala, sbt, ensime
-- [ ] autocompletion (ac vs. company-mode ?x)
+- [X] autocompletion (ac vs. company-mode ?x)
 - [ ] yasnippet
 - [ ] coffee-mode
 - [ ] clojure (CIDER)
