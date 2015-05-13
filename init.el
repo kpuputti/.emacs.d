@@ -97,10 +97,8 @@
 (use-package yasnippet
   :ensure t
   :diminish yas-minor-mode
-  :init
-  (add-hook 'prog-mode-hook #'yas-minor-mode)
   :config
-  (yas-reload-all))
+  (yas-global-mode 1))
 
 (use-package magit
   :ensure t
