@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [65%] Tasks
+** TODO [67%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -73,7 +73,6 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] configure yasnippet properly
 - [ ] add extra snippet packages (mocha, react)
 - [ ] turn on tern-mode for .jsx files
-- [ ] pin smartparens to the melpa stable version
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
 - [ ] run js2 flycheckers when in .jsx file in web-mode
@@ -83,7 +82,6 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] open magit in full frame, go back to previous window
   configuration when exiting magit
 - [ ] expand/contract json region (using python -mjson.tool ?)
-- [ ] newline and indent when RET between pairs
 - [ ] defer builtin package requires that use IO to make startup
   faster (bookmarks, save-place, recentf, etc.)
 - [ ] add file suffix pairs for switching between similar files with
