@@ -48,7 +48,7 @@
   :config
   (load-theme 'solarized-dark t)
   (set-face-attribute 'region nil :background color-base3 :foreground color-magenta)
-  (set-face-attribute 'mode-line nil :background color-mode-line-background))
+  (set-face-attribute 'mode-line nil :background color-mode-line-background :box nil))
 
 (use-package smart-mode-line
   :ensure t

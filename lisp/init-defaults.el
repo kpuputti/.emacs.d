@@ -38,9 +38,6 @@
 (size-indication-mode t)
 (blink-cursor-mode -1)
 
-;; Disable modeline 3D highlighting.
-(set-face-attribute 'mode-line nil :box nil)
-
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 8)
 
