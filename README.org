@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [66%] Tasks
+** TODO [65%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -73,6 +73,7 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] configure yasnippet properly
 - [ ] add extra snippet packages (mocha, react)
 - [ ] turn on tern-mode for .jsx files
+- [ ] add ' to web-mode electric pairs
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
 - [ ] run js2 flycheckers when in .jsx file in web-mode
