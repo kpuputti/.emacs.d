@@ -39,6 +39,8 @@
 (size-indication-mode t)
 (blink-cursor-mode -1)
 
+(fringe-mode '(4 . 0))
+
 ;; http://emacsredux.com/blog/2013/04/07/display-visited-files-path-in-the-frame-title/
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
