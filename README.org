@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [63%] Tasks
+** TODO [65%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -67,9 +67,9 @@ the actions. You might want to restart Emacs after finishing.
 - [X] scala, sbt, ensime
 - [X] autocompletion (ac vs. company-mode ?x)
 - [X] yasnippet
+- [X] show full path in frame title
 - [ ] org-present
 - [ ] engine-mode
-- [ ] show full path in frame title
 - [ ] add custom sml replacer list (ignored from git due to work project paths)
 - [ ] configure yasnippet properly
 - [ ] add extra snippet packages (mocha, react)
@@ -79,7 +79,6 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
 - [ ] run js2 flycheckers when in .jsx file in web-mode
-- [ ] add ' to the web-mode electric pairs
 - [ ] readable colors for org-mode TODO headlines
 - [ ] kill/copy current line if region is empty
 - [ ] M-; comments current line if region is empty
