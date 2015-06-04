@@ -52,6 +52,7 @@
 
 (use-package smart-mode-line
   :ensure t
+  :if window-system
   :init (sml/setup))
 
 (use-package ace-jump-mode
