@@ -22,7 +22,7 @@ get everything working properly).
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [65%] Tasks
+** TODO [70%] Tasks
 
 - [X] add default configuration
   - [X] setup package archives
@@ -68,20 +68,23 @@ the actions. You might want to restart Emacs after finishing.
 - [X] autocompletion (ac vs. company-mode ?x)
 - [X] yasnippet
 - [X] show full path in frame title
+- [X] turn on tern-mode for .jsx files
+- [X] run js2 flycheckers when in .jsx file in web-mode
+- [X] add ' to web-mode electric pairs
+- [X] disable js flycheckers and tern in non-jsx web-mode files
+- [ ] fix casing in company-mode suggestions (related to subword-mode?)
+- [ ] kill/copy current line if region is empty
+- [ ] M-; comments current line if region is empty
+- [ ] remove confirm when creating temp buffers
+- [ ] configure basic IDO for times when Helm is overkill
+- [ ] force Helm to always open in the bottom of the frame
 - [ ] org-present
 - [ ] engine-mode
 - [ ] add custom sml replacer list (ignored from git due to work project paths)
 - [ ] configure yasnippet properly
 - [ ] add extra snippet packages (mocha, react)
-- [ ] turn on tern-mode for .jsx files
-- [ ] add ' to web-mode electric pairs
-- [ ] better highlight colors for search results
 - [ ] fix non-hex color highlighting in rainbow-mode
 - [ ] fix sass executable warnings in scss-mode
-- [ ] run js2 flycheckers when in .jsx file in web-mode
-- [ ] readable colors for org-mode TODO headlines
-- [ ] kill/copy current line if region is empty
-- [ ] M-; comments current line if region is empty
 - [ ] open magit in full frame, go back to previous window
   configuration when exiting magit
 - [ ] expand/contract json region (using python -mjson.tool ?)
@@ -90,7 +93,6 @@ the actions. You might want to restart Emacs after finishing.
 - [ ] add file suffix pairs for switching between similar files with
   projectile-find-other-file (e.g. Component.jsx <-> Component.less)
 - [ ] function to evaluate last sexp and replace it with the value
-- [ ] remove confirm when creating temp buffers
 
 ** Resources
 

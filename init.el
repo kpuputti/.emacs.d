@@ -143,7 +143,10 @@
   :ensure t
   :init
   (setq flycheck-highlighting-mode 'nil)
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  :config
+  ;; Disable JSHint checker in favor of ESLint.
+  (setq-default flycheck-disabled-checkers '(javascript-jshint)))
 
 (use-package smartparens
   :ensure t
@@ -207,7 +210,33 @@
         web-mode-code-indent-offset 2
         web-mode-style-padding 2
         web-mode-script-padding 2)
-  (add-hook 'web-mode-hook (lambda () (local-set-key (kbd "C-=") 'web-mode-mark-and-expand))))
+
+  (defun my-setup-web-mode-html ()
+    (local-set-key (kbd "C-=") 'web-mode-mark-and-expand)
+    (setq-default flycheck-disabled-checkers '(javascript-eslint javascript-jshint))
+    (flycheck-select-checker nil))
+
+  (defun my-setup-web-mode-jsx ()
+    (local-set-key (kbd "C-=") 'er/expand-region)
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+    (setq-default flycheck-disabled-checkers '(javascript-jshint))
+    (flycheck-select-checker 'javascript-eslint)
+    (tern-mode 1))
+
+  (defun my-setup-web-mode ()
+    (if (equal (file-name-extension buffer-file-name) "jsx")
+        (my-setup-web-mode-jsx)
+      (my-setup-web-mode-html)))
+
+  (defun my-web-mode-hook ()
+    (setq-local electric-pair-pairs (append electric-pair-pairs '((?' . ?'))))
+    (setq-local electric-pair-text-pairs electric-pair-pairs))
+
+  (defadvice switch-to-buffer (after my-select-web-mode-config activate)
+    (when (equal major-mode 'web-mode)
+      (my-setup-web-mode)))
+
+  (add-hook 'web-mode-hook 'my-web-mode-hook))
 
 (use-package jsx-mode
   :ensure t
