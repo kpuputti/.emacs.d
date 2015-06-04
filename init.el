@@ -212,16 +212,21 @@
         web-mode-script-padding 2)
 
   (defun my-setup-web-mode-html ()
+    (message "== setup web-mode for HTML ==")
     (local-set-key (kbd "C-=") 'web-mode-mark-and-expand)
-    (setq-default flycheck-disabled-checkers '(javascript-eslint javascript-jshint))
-    (flycheck-select-checker nil))
+    (flycheck-disable-checker 'javascript-eslint)
+    (flycheck-select-checker 'html-tidy))
 
   (defun my-setup-web-mode-jsx ()
+    (message "== setup web-mode for JSX ==")
     (local-set-key (kbd "C-=") 'er/expand-region)
-    (flycheck-add-mode 'javascript-eslint 'web-mode)
-    (setq-default flycheck-disabled-checkers '(javascript-jshint))
+    ;; TODO: Somehow the html-tidy checker is still enabled when a jsx
+    ;; file is opened, but the errors disappear after the first
+    ;; change. Investigate further.
+    (flycheck-disable-checker 'html-tidy)
     (flycheck-select-checker 'javascript-eslint)
-    (tern-mode 1))
+    (tern-mode 1)
+    (diminish 'tern-mode))
 
   (defun my-setup-web-mode ()
     (if (equal (file-name-extension buffer-file-name) "jsx")
@@ -233,9 +238,11 @@
     (setq-local electric-pair-text-pairs electric-pair-pairs))
 
   (defadvice switch-to-buffer (after my-select-web-mode-config activate)
-    (if (equal major-mode 'web-mode)
-        (my-setup-web-mode)
-      (setq-default flycheck-disabled-checkers '(javascript-jshint))))
+    (when (equal major-mode 'web-mode)
+        (my-setup-web-mode)))
+
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  (flycheck-add-mode 'html-tidy 'web-mode)
 
   (add-hook 'web-mode-hook 'my-web-mode-hook))
 
