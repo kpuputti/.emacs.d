@@ -233,8 +233,9 @@
     (setq-local electric-pair-text-pairs electric-pair-pairs))
 
   (defadvice switch-to-buffer (after my-select-web-mode-config activate)
-    (when (equal major-mode 'web-mode)
-      (my-setup-web-mode)))
+    (if (equal major-mode 'web-mode)
+        (my-setup-web-mode)
+      (setq-default flycheck-disabled-checkers '(javascript-jshint))))
 
   (add-hook 'web-mode-hook 'my-web-mode-hook))
 
