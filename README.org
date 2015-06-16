@@ -46,6 +46,7 @@ Other Emacs resources:
 - [[https://www.reddit.com/r/emacs/][/r/emacs]]
 - [[http://emacsredux.com/blog/2015/05/09/emacs-on-os-x/][Emacs on OS X]]
 - [[http://tuhdo.github.io/index.html][tuhdo's Emacs tutorials]]
+- [[https://emacs.zeef.com/ehartc][list of useful packages]]
 - [[http://emacs.stackexchange.com/][emacs.stackexchange.com]]
 - [[https://www.masteringemacs.org/][www.masteringemacs.org]]
 - [[http://planet.emacsen.org/][Planet Emacsen]]
