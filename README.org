@@ -2,7 +2,7 @@
 
 My Emacs configuration.
 
-** Installing Emacs
+** Usage
 
 Currently I'm only using this configuration on OSX, but nothing should
 break (in theory) on other platforms that Emacs itself supports.
@@ -17,84 +17,18 @@ Then make sure the =emacs= executable and starting from Spotlight
 works (you might have to =brew linkapps emacs= or do some copying to
 get everything working properly).
 
+Then clone this repo to =~/.emacs.d= and start Emacs. First startup
+will take time since it downloads and installs all the required
+packages.
+
 ** Updating packages
 
 =M-x list-packages= then press =U= to mark upgrades and =x= to execute
 the actions. You might want to restart Emacs after finishing.
 
-** TODO [70%] Tasks
-
-- [X] add default configuration
-  - [X] setup package archives
-  - [X] setup OSX keys
-  - [X] hide visual noise
-  - [X] setup generated files
-  - [X] setup separate custom file
-- [X] init use-package
-- [X] fix OSX exec path
-- [X] theme
-- [X] font
-- [X] ace-window
-- [X] winner-mode
-- [X] undo-tree
-- [X] expand-region
-- [X] multiple-cursors
-- [X] volatile-highlights
-- [X] anzu
-- [X] magit
-- [X] git-gutter-fringe
-- [X] ag
-- [X] projectile
-- [X] flycheck
-- [X] smartparens
-- [X] smart-mode-line
-- [X] restclient
-- [X] markdown-mode
-- [X] json-mode
-- [X] js2-mode
-- [X] js2-refactor
-- [X] js-doc
-- [X] tern
-- [X] jsx-mode (but use web-mode for .jsx files)
-- [X] web-mode (+ use expand-region binding with web-mode's own expand function)
-- [X] typescript
-- [X] less-css-mode
-- [X] scss-mode
-- [X] rainbow-mode for css, less, and scss files
-- [X] helm (+ helm-projectile, helm-ag, helm-spotify, helm-package, etc.)
-- [X] highlight selected buffer modeline better
-- [X] ace-jump-mode
-- [X] scala, sbt, ensime
-- [X] autocompletion (ac vs. company-mode ?x)
-- [X] yasnippet
-- [X] show full path in frame title
-- [X] turn on tern-mode for .jsx files
-- [X] run js2 flycheckers when in .jsx file in web-mode
-- [X] add ' to web-mode electric pairs
-- [X] disable js flycheckers and tern in non-jsx web-mode files
-- [ ] fix casing in company-mode suggestions (related to subword-mode?)
-- [ ] kill/copy current line if region is empty
-- [ ] M-; comments current line if region is empty
-- [ ] remove confirm when creating temp buffers
-- [ ] configure basic IDO for times when Helm is overkill
-- [ ] force Helm to always open in the bottom of the frame
-- [ ] org-present
-- [ ] engine-mode
-- [ ] add custom sml replacer list (ignored from git due to work project paths)
-- [ ] configure yasnippet properly
-- [ ] add extra snippet packages (mocha, react)
-- [ ] fix non-hex color highlighting in rainbow-mode
-- [ ] fix sass executable warnings in scss-mode
-- [ ] open magit in full frame, go back to previous window
-  configuration when exiting magit
-- [ ] expand/contract json region (using python -mjson.tool ?)
-- [ ] defer builtin package requires that use IO to make startup
-  faster (bookmarks, save-place, recentf, etc.)
-- [ ] add file suffix pairs for switching between similar files with
-  projectile-find-other-file (e.g. Component.jsx <-> Component.less)
-- [ ] function to evaluate last sexp and replace it with the value
-
 ** Resources
+
+Emacs setups:
 
 - [[https://github.com/technomancy/better-defaults][technomancy/better-defaults]]
 - [[https://github.com/technomancy/emacs-starter-kit][technomancy/emacs-starter-kit]]
@@ -103,9 +37,23 @@ the actions. You might want to restart Emacs after finishing.
 - [[https://github.com/purcell/emacs.d/][purcell/emacs.d]]
 - [[https://github.com/lunaryorn/.emacs.d][lunaryorn/.emacs.d]]
 - [[https://github.com/jwiegley/dot-emacs][jwiegley/dot-emacs]]
+- [[https://github.com/syl20bnr/spacemacs][Spacemacs]]
+
+Other Emacs resources:
+
+- [[http://www.gnu.org/software/emacs/][GNU Emacs website]]
+- [[http://emacswiki.org/][EmacsWiki]]
+- [[https://www.reddit.com/r/emacs/][/r/emacs]]
+- [[http://tuhdo.github.io/index.html][tuhdo's Emacs tutorials]]
 - [[http://emacs.stackexchange.com/][emacs.stackexchange.com]]
+- [[https://www.masteringemacs.org/][www.masteringemacs.org]]
+- [[http://planet.emacsen.org/][Planet Emacsen]]
 - [[http://emacsredux.com/][emacsredux.com]]
 - [[http://whattheemacsd.com/][whattheemacsd.com]]
-- [[https://www.masteringemacs.org/][www.masteringemacs.org]]
 - [[http://emacs-fu.blogspot.fi/][emacs-fu]]
-- [[http://planet.emacsen.org/][Planet Emacsen]]
+- [[http://oremacs.com/][(or emacs]]
+- [[http://endlessparentheses.com/][Endless Parentheses]]
+- [[http://irreal.org/blog/][Irreal]]
+- [[http://pragmaticemacs.com/][Pragmatic Emacs]]
+- [[http://emacsblog.org/][M-x all-things-emacs]]
+- [[http://sachachua.com/blog/][Sacha Chua's blog]]
