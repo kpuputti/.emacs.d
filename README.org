@@ -44,6 +44,7 @@ Other Emacs resources:
 - [[http://www.gnu.org/software/emacs/][GNU Emacs website]]
 - [[http://emacswiki.org/][EmacsWiki]]
 - [[https://www.reddit.com/r/emacs/][/r/emacs]]
+- [[http://emacsredux.com/blog/2015/05/09/emacs-on-os-x/][Emacs on OS X]]
 - [[http://tuhdo.github.io/index.html][tuhdo's Emacs tutorials]]
 - [[http://emacs.stackexchange.com/][emacs.stackexchange.com]]
 - [[https://www.masteringemacs.org/][www.masteringemacs.org]]
