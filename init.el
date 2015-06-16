@@ -268,7 +268,9 @@
   :ensure t)
 
 (use-package scss-mode
-  :ensure t)
+  :ensure t
+  :mode (("\\.scss\\'" . scss-mode)
+         ("\\.postcss\\'" . scss-mode)))
 
 (use-package scala-mode2
   :ensure t
