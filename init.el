@@ -238,9 +238,9 @@
     (setq-local electric-pair-pairs (append electric-pair-pairs '((?' . ?'))))
     (setq-local electric-pair-text-pairs electric-pair-pairs))
 
-  (defadvice switch-to-buffer (after my-select-web-mode-config activate)
-    (when (equal major-mode 'web-mode)
-        (my-setup-web-mode)))
+  ;; (defadvice switch-to-buffer (after my-select-web-mode-config activate)
+  ;;   (when (equal major-mode 'web-mode)
+  ;;       (my-setup-web-mode)))
 
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'html-tidy 'web-mode)
