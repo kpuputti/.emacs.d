@@ -61,7 +61,7 @@
 
 (use-package ace-window
   :ensure t
-  :bind ("C-x o" . ace-window))
+  :bind ("M-o" . ace-window))
 
 (use-package undo-tree
   :ensure t
@@ -74,6 +74,7 @@
 
 (use-package multiple-cursors
   :ensure t
+  :bind ("C-c m c" . mc/edit-lines)
   :init (setq mc/list-file (concat my-gen-dir "mc-lists.el")))
 
 (use-package volatile-highlights
@@ -197,7 +198,7 @@
     :init
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
     :config
-    (js2r-add-keybindings-with-prefix "C-c C-m")))
+    (js2r-add-keybindings-with-prefix "C-c r")))
 
 (use-package web-mode
   :ensure t
