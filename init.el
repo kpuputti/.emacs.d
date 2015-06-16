@@ -90,7 +90,10 @@
 (use-package company
   :ensure t
   :diminish company-mode
-  :init (add-hook 'after-init-hook 'global-company-mode)
+  :init
+  (setq company-dabbrev-ignore-case t
+        company-dabbrev-downcase nil)
+  (add-hook 'after-init-hook 'global-company-mode)
   :config
   (use-package company-tern
     :ensure t

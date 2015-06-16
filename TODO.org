@@ -1,7 +1,6 @@
-* TODO
+* Things to improve, fix, or investigate
 
 - use js2-refactor prefix in web-mode jsx files
-- fix casing in company-mode suggestions (related to subword-mode?)
 - kill/copy current line if region is empty
 - M-; comments current line if region is empty
 - remove confirm when creating temp buffers
