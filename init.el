@@ -107,11 +107,9 @@
 
 (use-package magit
   :ensure t
-  :diminish magit-auto-revert-mode
-  :init (setq magit-last-seen-setup-instructions "1.4.0")
   :bind (("C-c g s" . magit-status)
-         ("C-c g l" . magit-file-log)
-         ("C-c g b" . magit-blame-mode)))
+         ("C-c g b" . magit-blame)
+         ("C-c g d" . vc-diff)))
 
 (use-package git-gutter-fringe
   :ensure t
