@@ -60,9 +60,14 @@
   :ensure t
   :bind ("C-c <SPC>" . ace-jump-mode))
 
+(use-package avy
+  :ensure t
+  :bind ("C-." . avy-goto-char))
+
 (use-package ace-window
   :ensure t
-  :bind ("M-o" . ace-window))
+  :bind ("M-o" . ace-window)
+  :init (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package undo-tree
   :ensure t
