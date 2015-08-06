@@ -56,6 +56,7 @@
   :init (sml/setup))
 
 (use-package ace-jump-mode
+  :disabled t
   :ensure t
   :bind ("C-c <SPC>" . ace-jump-mode))
 
@@ -100,6 +101,7 @@
     :init (add-to-list 'company-backends 'company-tern)))
 
 (use-package yasnippet
+  :disabled t
   :ensure t
   :diminish yas-minor-mode
   :config
@@ -112,8 +114,8 @@
          ("C-c g d" . vc-diff)))
 
 (use-package git-gutter-fringe
-  :ensure t
   :disabled t
+  :ensure t
   :diminish git-gutter-mode
   :init (setq git-gutter-fr:side 'right-fringe)
   :config (global-git-gutter-mode t))
@@ -151,8 +153,8 @@
   (setq-default flycheck-disabled-checkers '(javascript-jshint)))
 
 (use-package smartparens
-  :ensure t
   :disabled t
+  :ensure t
   :diminish smartparens-mode
   :config
   (require 'smartparens-config)
