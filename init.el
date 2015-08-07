@@ -9,6 +9,9 @@
 (use-package misc
   :bind ("M-z" . zap-up-to-char))
 
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))
+
 (use-package whitespace
   :diminish global-whitespace-mode
   :init (setq-default whitespace-style '(face tab-mark trailing))
@@ -66,7 +69,7 @@
 
 (use-package ace-window
   :ensure t
-  :bind ("M-o" . ace-window)
+  :bind* ("M-o" . ace-window)
   :init (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package undo-tree
