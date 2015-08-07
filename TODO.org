@@ -11,19 +11,14 @@
 - add custom sml replacer list (ignored from git due to work project
   paths)
 - configure yasnippet properly
-- add extra snippet packages (mocha, react)
+  - add extra snippet packages (mocha, react)
 - fix non-hex color highlighting in rainbow-mode
 - fix sass executable warnings in scss-mode
-- open magit in full frame, go back to previous window configuration
-  when exiting magit
 - expand/contract json region (using python -mjson.tool ?)
 - defer builtin package requires that use IO to make startup faster
   (bookmarks, save-place, recentf, etc.)
 - add file suffix pairs for switching between similar files with
   projectile-find-other-file (e.g. Component.jsx <-> Component.less)
 - function to evaluate last sexp and replace it with the value
-- bind M-y to helm-show-kill-ring
-- setup ibuffer for =C-x C-b=, unbind =M-o= inside ibuffer
 - assert Emacs version, issue a warning/error when using an old
   version
-- change magit shortcuts to mimic vc ones (with =C-x= -> =C-c=)
