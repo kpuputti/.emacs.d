@@ -134,7 +134,8 @@
 (use-package helm
   :ensure t
   :diminish helm-mode
-  :bind ("C-c i" . helm-imenu)
+  :bind (("C-c i" . helm-imenu)
+         ("M-y" . helm-show-kill-ring))
   :config
   (require 'helm-config)
   (helm-mode 1)
@@ -149,7 +150,8 @@
   :config
   (projectile-global-mode)
   (use-package helm-projectile
-    :ensure t))
+    :ensure t
+    :bind ("C-c p s a" . helm-projectile-ag)))
 
 (use-package flycheck
   :ensure t
