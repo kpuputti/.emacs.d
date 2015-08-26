@@ -302,6 +302,12 @@
     :init
     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
 
+(use-package cider
+  :ensure t
+  :config
+  (add-hook 'clojure-mode-hook #'cider-mode)
+  (add-hook 'cider-mode-hook #'eldoc-mode))
+
 (load custom-file 'no-error 'no-message)
 
 (provide 'init)
