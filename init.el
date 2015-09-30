@@ -65,7 +65,7 @@
 
 (use-package avy
   :ensure t
-  :bind ("C-." . avy-goto-char)
+  :bind ("C-." . avy-goto-word-1)
   :config (setq avy-all-windows nil))
 
 (use-package ace-window
