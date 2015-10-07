@@ -307,7 +307,13 @@
   :ensure t
   :config
   (add-hook 'clojure-mode-hook #'cider-mode)
-  (add-hook 'cider-mode-hook #'eldoc-mode))
+  (add-hook 'cider-mode-hook #'eldoc-mode)
+  (defun my-cider-reset ()
+    (interactive)
+    (cider-ensure-connected)
+    (save-some-buffers)
+    (cider-interactive-eval "(user/reset)"))
+  (global-set-key (kbd "C-c r") #'my-cider-reset))
 
 (load custom-file 'no-error 'no-message)
 
