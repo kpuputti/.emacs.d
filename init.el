@@ -313,7 +313,11 @@
     (cider-ensure-connected)
     (save-some-buffers)
     (cider-interactive-eval "(user/reset)"))
-  (global-set-key (kbd "C-c r") #'my-cider-reset))
+  (global-set-key (kbd "C-c r") #'my-cider-reset)
+  (use-package rainbow-delimiters
+    :ensure t
+    :config
+    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)))
 
 (load custom-file 'no-error 'no-message)
 
