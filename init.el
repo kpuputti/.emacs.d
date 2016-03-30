@@ -6,7 +6,10 @@
 (require 'init-defaults)
 (require 'init-package)
 
+(setq use-package-always-ensure t)
+
 (use-package misc
+  :ensure f
   :bind ("M-z" . zap-up-to-char))
 
 (use-package ibuffer
@@ -18,12 +21,10 @@
   :config (global-whitespace-mode 1))
 
 (use-package exec-path-from-shell
-  :ensure t
   :if (memq window-system '(mac ns))
   :config (exec-path-from-shell-initialize))
 
 (use-package solarized-theme
-  :ensure t
   :if window-system
   :init
   (setq solarized-distinct-fringe-background t
@@ -54,51 +55,44 @@
   (set-face-attribute 'mode-line nil :background color-mode-line-background :box nil))
 
 (use-package smart-mode-line
-  :ensure t
   :if window-system
   :init (sml/setup))
 
 (use-package ace-jump-mode
   :disabled t
-  :ensure t
   :bind ("C-c <SPC>" . ace-jump-mode))
 
 (use-package avy
-  :ensure t
   :bind ("C-." . avy-goto-word-1)
   :config (setq avy-all-windows nil))
 
 (use-package ace-window
-  :ensure t
   :bind* ("M-o" . ace-window)
   :init (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 (use-package undo-tree
-  :ensure t
   :diminish undo-tree-mode
   :config (global-undo-tree-mode))
 
 (use-package expand-region
-  :ensure t
   :bind ("C-=" . er/expand-region))
 
 (use-package multiple-cursors
-  :ensure t
-  :bind ("C-c m c" . mc/edit-lines)
+  :bind (("C-c m c" . mc/edit-lines)
+         ("C-c m n" . mc/mark-next-like-this)
+         ("C-c m p" . mc/mark-previous-like-this)
+         ("C-c m a" . mc/mark-all-like-this))
   :init (setq mc/list-file (concat my-gen-dir "mc-lists.el")))
 
 (use-package volatile-highlights
-  :ensure t
   :diminish volatile-highlights-mode
   :config (volatile-highlights-mode t))
 
 (use-package anzu
-  :ensure t
   :diminish anzu-mode
   :config (global-anzu-mode +1))
 
 (use-package company
-  :ensure t
   :diminish company-mode
   :init
   (setq company-dabbrev-ignore-case t
@@ -106,34 +100,28 @@
   (add-hook 'after-init-hook 'global-company-mode)
   :config
   (use-package company-tern
-    :ensure t
     :init (add-to-list 'company-backends 'company-tern)))
 
 (use-package yasnippet
   :disabled t
-  :ensure t
   :diminish yas-minor-mode
   :config
   (yas-global-mode 1))
 
 (use-package magit
-  :ensure t
   :bind (("C-c g s" . magit-status)
          ("C-c g b" . magit-blame)
          ("C-c g d" . vc-diff)))
 
 (use-package git-gutter-fringe
   :disabled t
-  :ensure t
   :diminish git-gutter-mode
   :init (setq git-gutter-fr:side 'right-fringe)
   :config (global-git-gutter-mode t))
 
-(use-package ag
-  :ensure t)
+(use-package ag)
 
 (use-package helm
-  :ensure t
   :diminish helm-mode
   :bind (("C-c i" . helm-imenu)
          ("M-y" . helm-show-kill-ring))
@@ -148,21 +136,16 @@
                  (inhibit-same-window . t)
                  (window-height . 0.4)))
   (use-package helm-ag
-    :ensure t
     :bind ("C-c h a" . helm-ag))
-  (use-package helm-spotify
-    :ensure t))
+  (use-package helm-spotify))
 
 (use-package projectile
-  :ensure t
   :config
   (projectile-global-mode)
   (use-package helm-projectile
-    :ensure t
     :bind ("C-c p s a" . helm-projectile-ag)))
 
 (use-package flycheck
-  :ensure t
   :init
   (setq flycheck-highlighting-mode 'nil)
   (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -170,29 +153,23 @@
   ;; Disable JSHint checker in favor of ESLint.
   (setq-default flycheck-disabled-checkers '(javascript-jshint)))
 
-(use-package smartparens
-  :disabled t
-  :ensure t
+(use-package smartparens-config
+  :ensure smartparens
   :diminish smartparens-mode
   :config
-  (require 'smartparens-config)
-  (smartparens-global-mode 1))
+  (smartparens-global-strict-mode))
 
-(use-package restclient
-  :ensure t)
+(use-package restclient)
 
 (use-package markdown-mode
-  :ensure t
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
          ("README\\.md\\'" . gfm-mode)))
 
 (use-package json-mode
-  :ensure t
   :init (setq js-indent-level 2))
 
 (use-package js2-mode
-  :ensure t
   :mode "\\.js\\'"
   :init
   (setq js2-highlight-level 3
@@ -207,14 +184,11 @@
   (rename-modeline "js2-mode" js2-mode "JS2")
   :config
   (use-package tern
-    :ensure t
     :diminish tern-mode
     :init
     (add-hook 'js2-mode-hook 'tern-mode))
-  (use-package js-doc
-    :ensure t)
+  (use-package js-doc)
   (use-package js2-refactor
-    :ensure t
     :diminish js2-refactor-mode
     :init
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
@@ -222,7 +196,6 @@
     (js2r-add-keybindings-with-prefix "C-c r")))
 
 (use-package web-mode
-  :ensure t
   :mode (("\\.html?\\'" . web-mode)
          ("\\.ejs\\'" . web-mode)
          ("\\.jsx\\'" . web-mode))
@@ -269,42 +242,34 @@
   (add-hook 'web-mode-hook 'my-web-mode-hook))
 
 (use-package jsx-mode
-  :ensure t
   :init (setq jsx-indent-level 2))
 
 (use-package tss
-  :ensure t
   :mode ("\\.ts\\'" . typescript-mode))
 
 (use-package css-mode
   :init (setq css-indent-offset 2)
   :config
   (use-package rainbow-mode
-    :ensure t
     :diminish rainbow-mode
     :init
     (add-hook 'css-mode-hook (lambda () (rainbow-mode t)))))
 
-(use-package less-css-mode
-  :ensure t)
+(use-package less-css-mode)
 
 (use-package scss-mode
-  :ensure t
   :mode (("\\.scss\\'" . scss-mode)
          ("\\.postcss\\'" . scss-mode)))
 
 (use-package scala-mode2
-  :ensure t
   :config
-  (use-package sbt-mode
-    :ensure t)
+  (use-package sbt-mode)
   (use-package ensime
-    :ensure t
+    :disabled t
     :init
     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
 
 (use-package cider
-  :ensure t
   :config
   (add-hook 'clojure-mode-hook #'cider-mode)
   (add-hook 'cider-mode-hook #'eldoc-mode)
@@ -315,9 +280,18 @@
     (cider-interactive-eval "(user/reset)"))
   (global-set-key (kbd "C-c r") #'my-cider-reset)
   (use-package rainbow-delimiters
-    :ensure t
     :config
-    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)))
+    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
+  (use-package align-cljlet
+    :bind ("C-c a l" . align-cljlet)))
+
+(use-package inf-ruby
+  :config
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+  (use-package robe))
+
+(use-package crux
+  :bind ("C-M-z" . crux-indent-defun))
 
 (load custom-file 'no-error 'no-message)
 
