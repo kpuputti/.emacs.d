@@ -170,13 +170,17 @@
   :init (setq js-indent-level 2))
 
 (use-package js2-mode
-  :mode "\\.js\\'"
+  :mode (("\\.js\\'" . js2-mode)
+         ("\\.jsx\\'" . js2-jsx-mode))
   :init
   (setq js2-highlight-level 3
-        js2-basic-offset 2
+        js2-strict-trailing-comma-warning nil
+        js2-strict-missing-semi-warning nil
+        js2-missing-semi-one-line-override t
         js2-allow-rhino-new-expr-initializer nil
-        js2-global-externs '("describe" "before" "beforeEach" "after" "afterEach" "it")
-        js2-include-node-externs t)
+        js2-include-node-externs t
+        js2-warn-about-unused-function-arguments t
+        js2-basic-offset 2)
   (add-hook 'js2-mode-hook (lambda ()
                              (subword-mode 1)
                              (diminish 'subword-mode)))
@@ -197,8 +201,7 @@
 
 (use-package web-mode
   :mode (("\\.html?\\'" . web-mode)
-         ("\\.ejs\\'" . web-mode)
-         ("\\.jsx\\'" . web-mode))
+         ("\\.ejs\\'" . web-mode))
   :init
   (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
@@ -206,37 +209,6 @@
         web-mode-style-padding 2
         web-mode-script-padding 2)
 
-  (defun my-setup-web-mode-html ()
-    (message "== setup web-mode for HTML ==")
-    (local-set-key (kbd "C-=") 'web-mode-mark-and-expand)
-    (flycheck-disable-checker 'javascript-eslint)
-    (flycheck-select-checker 'html-tidy))
-
-  (defun my-setup-web-mode-jsx ()
-    (message "== setup web-mode for JSX ==")
-    (local-set-key (kbd "C-=") 'er/expand-region)
-    ;; TODO: Somehow the html-tidy checker is still enabled when a jsx
-    ;; file is opened, but the errors disappear after the first
-    ;; change. Investigate further.
-    (flycheck-disable-checker 'html-tidy)
-    (flycheck-select-checker 'javascript-eslint)
-    (tern-mode 1)
-    (diminish 'tern-mode))
-
-  (defun my-setup-web-mode ()
-    (if (equal (file-name-extension buffer-file-name) "jsx")
-        (my-setup-web-mode-jsx)
-      (my-setup-web-mode-html)))
-
-  (defun my-web-mode-hook ()
-    (setq-local electric-pair-pairs (append electric-pair-pairs '((?' . ?'))))
-    (setq-local electric-pair-text-pairs electric-pair-pairs))
-
-  ;; (defadvice switch-to-buffer (after my-select-web-mode-config activate)
-  ;;   (when (equal major-mode 'web-mode)
-  ;;       (my-setup-web-mode)))
-
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'html-tidy 'web-mode)
 
   (add-hook 'web-mode-hook 'my-web-mode-hook))
