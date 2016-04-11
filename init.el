@@ -213,6 +213,8 @@
 
   (add-hook 'web-mode-hook 'my-web-mode-hook))
 
+(use-package haml-mode)
+
 (use-package jsx-mode
   :init (setq jsx-indent-level 2))
 
