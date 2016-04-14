@@ -124,7 +124,8 @@
 (use-package helm
   :diminish helm-mode
   :bind (("C-c i" . helm-imenu)
-         ("M-y" . helm-show-kill-ring))
+         ("M-y" . helm-show-kill-ring)
+         ("M-x" . helm-M-x))
   :init
   (require 'helm-config)
   (helm-mode 1)
@@ -134,10 +135,7 @@
                `(,(rx bos "*helm" (* not-newline) "*" eos)
                  (display-buffer-in-side-window)
                  (inhibit-same-window . t)
-                 (window-height . 0.4)))
-  (use-package helm-ag
-    :bind ("C-c h a" . helm-ag))
-  (use-package helm-spotify))
+                 (window-height . 0.4))))
 
 (use-package projectile
   :config
