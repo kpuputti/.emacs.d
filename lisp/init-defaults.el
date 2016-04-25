@@ -126,8 +126,8 @@
                                          try-complete-lisp-symbol))
 
 ;; Font
-(when window-system
-  (add-to-list 'default-frame-alist '(font . "Source Code Pro")))
+;; (when window-system
+;;   (add-to-list 'default-frame-alist '(font . "Source Code Pro")))
 
 ;; OSX specific setup.
 (when is-osx
