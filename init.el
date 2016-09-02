@@ -251,11 +251,14 @@
     (save-some-buffers)
     (cider-interactive-eval "(user/reset)"))
   (global-set-key (kbd "C-c r") #'my-cider-reset)
-  (use-package rainbow-delimiters
-    :config
-    (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
   (use-package align-cljlet
     :bind ("C-c a l" . align-cljlet)))
+
+(use-package rainbow-delimiters
+  :config
+  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
+
+(use-package geiser)
 
 (use-package inf-ruby
   :config
