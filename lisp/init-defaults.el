@@ -18,8 +18,7 @@
 
 (setq uniquify-buffer-name-style 'forward)
 
-(setq-default save-place t)
-(require 'saveplace)
+(save-place-mode 1)
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
