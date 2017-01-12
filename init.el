@@ -168,8 +168,7 @@
   :init (setq js-indent-level 2))
 
 (use-package js2-mode
-  :mode (("\\.js\\'" . js2-mode)
-         ("\\.jsx\\'" . js2-jsx-mode))
+  :mode (("\\.js\\'" . js2-jsx-mode))
   :init
   (setq js2-highlight-level 3
         js2-strict-trailing-comma-warning nil
@@ -181,9 +180,10 @@
         js2-basic-offset 2)
   (add-hook 'js2-mode-hook (lambda ()
                              (subword-mode 1)
-                             (diminish 'subword-mode)))
-  (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
+                             (diminish 'subword-mode)
+                             (js2-imenu-extras-mode 1)))
   (rename-modeline "js2-mode" js2-mode "JS2")
+  (rename-modeline "js2-mode" js2-jsx-mode "JSX2")
   :config
   (use-package tern
     :diminish tern-mode
