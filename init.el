@@ -171,10 +171,20 @@
   :mode (("\\.js\\'" . js2-jsx-mode))
   :init
   (setq js2-highlight-level 3
+        js2-mode-assume-strict t
         js2-strict-trailing-comma-warning nil
-        js2-strict-missing-semi-warning nil
         js2-missing-semi-one-line-override t
         js2-allow-rhino-new-expr-initializer nil
+        js2-global-externs '("jest"
+                             "require"
+                             "describe"
+                             "it"
+                             "test"
+                             "expect"
+                             "afterEach"
+                             "beforeEach"
+                             "afterAll"
+                             "beforeAll")
         js2-include-node-externs t
         js2-warn-about-unused-function-arguments t
         js2-basic-offset 2)
