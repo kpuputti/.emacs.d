@@ -187,7 +187,8 @@
                              "beforeAll")
         js2-include-node-externs t
         js2-warn-about-unused-function-arguments t
-        js2-basic-offset 2)
+        js2-basic-offset 2
+        js-switch-indent-offset 2)
   (add-hook 'js2-mode-hook (lambda ()
                              (subword-mode 1)
                              (diminish 'subword-mode)
