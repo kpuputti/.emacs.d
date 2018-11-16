@@ -33,6 +33,7 @@
 (line-number-mode 1)
 (column-number-mode 1)
 (global-hl-line-mode 1)
+(global-eldoc-mode 1)
 (show-paren-mode 1)
 ;;(electric-pair-mode 1)
 (size-indication-mode t)
@@ -125,8 +126,8 @@
                                          try-complete-lisp-symbol))
 
 ;; Font
-;; (when window-system
-;;   (add-to-list 'default-frame-alist '(font . "Source Code Pro")))
+(when window-system
+  (add-to-list 'default-frame-alist '(font . "Source Code Pro")))
 
 ;; OSX specific setup.
 (when is-osx

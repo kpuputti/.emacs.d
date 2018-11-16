@@ -7,6 +7,9 @@
 (require 'init-package)
 
 (setq use-package-always-ensure t)
+(setq use-package-always-bin "melpa-stable")
+
+(use-package diminish)
 
 (use-package misc
   :ensure f
@@ -125,23 +128,29 @@
   :diminish helm-mode
   :bind (("C-c i" . helm-imenu)
          ("M-y" . helm-show-kill-ring)
-         ("M-x" . helm-M-x))
+         ("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+         ("M-s o" . helm-occur))
   :init
   (require 'helm-config)
   (helm-mode 1)
 
   ;; https://www.reddit.com/r/emacs/comments/345vtl/make_helm_window_at_the_bottom_without_using_any/
-  (add-to-list 'display-buffer-alist
-               `(,(rx bos "*helm" (* not-newline) "*" eos)
-                 (display-buffer-in-side-window)
-                 (inhibit-same-window . t)
-                 (window-height . 0.4))))
+  ;; (add-to-list 'display-buffer-alist
+  ;;              `(,(rx bos "*helm" (* not-newline) "*" eos)
+  ;;                (display-buffer-in-side-window)
+  ;;                (inhibit-same-window . t)
+  ;;                (window-height . 0.4)))
+  )
 
 (use-package projectile
+  :init
+  (setq projectile-keymap-prefix (kbd "C-c p"))
   :config
   (projectile-global-mode)
   (use-package helm-projectile
-    :bind ("C-c p s a" . helm-projectile-ag)))
+    :init
+    (helm-projectile-on)))
 
 (use-package flycheck
   :init
@@ -155,7 +164,8 @@
   :ensure smartparens
   :diminish smartparens-mode
   :config
-  (smartparens-global-strict-mode))
+  (smartparens-global-strict-mode)
+  (sp-use-paredit-bindings))
 
 (use-package restclient)
 
@@ -167,8 +177,8 @@
 (use-package json-mode
   :init (setq js-indent-level 2))
 
-(use-package js2-mode
-  :mode (("\\.js\\'" . js2-jsx-mode))
+(use-package rjsx-mode
+  :mode (("\\.js\\'" . rjsx-mode))
   :init
   (setq js2-highlight-level 3
         js2-mode-assume-strict t
@@ -189,24 +199,57 @@
         js2-warn-about-unused-function-arguments t
         js2-basic-offset 2
         js-switch-indent-offset 2)
-  (add-hook 'js2-mode-hook (lambda ()
-                             (subword-mode 1)
-                             (diminish 'subword-mode)
-                             (js2-imenu-extras-mode 1)))
-  (rename-modeline "js2-mode" js2-mode "JS2")
-  (rename-modeline "js2-mode" js2-jsx-mode "JSX2")
+  (add-hook 'rjsx-mode-hook (lambda ()
+                              (subword-mode 1)
+                              (diminish 'subword-mode)
+                              (js2-imenu-extras-mode 1)))
   :config
   (use-package tern
     :diminish tern-mode
     :init
-    (add-hook 'js2-mode-hook 'tern-mode))
-  (use-package js-doc)
-  (use-package js2-refactor
-    :diminish js2-refactor-mode
-    :init
-    (add-hook 'js2-mode-hook #'js2-refactor-mode)
-    :config
-    (js2r-add-keybindings-with-prefix "C-c r")))
+    (add-hook 'rjsx-mode-hook 'tern-mode))
+  (use-package js-doc))
+
+;; (use-package js2-mode
+;;   :mode (("\\.js\\'" . js2-jsx-mode))
+;;   :init
+;;   (setq js2-highlight-level 3
+;;         js2-mode-assume-strict t
+;;         js2-strict-trailing-comma-warning nil
+;;         js2-missing-semi-one-line-override t
+;;         js2-allow-rhino-new-expr-initializer nil
+;;         js2-global-externs '("jest"
+;;                              "require"
+;;                              "describe"
+;;                              "it"
+;;                              "test"
+;;                              "expect"
+;;                              "afterEach"
+;;                              "beforeEach"
+;;                              "afterAll"
+;;                              "beforeAll")
+;;         js2-include-node-externs t
+;;         js2-warn-about-unused-function-arguments t
+;;         js2-basic-offset 2
+;;         js-switch-indent-offset 2)
+;;   (add-hook 'js2-mode-hook (lambda ()
+;;                              (subword-mode 1)
+;;                              (diminish 'subword-mode)
+;;                              (js2-imenu-extras-mode 1)))
+;;   (rename-modeline "js2-mode" js2-mode "JS2")
+;;   (rename-modeline "js2-mode" js2-jsx-mode "JSX2")
+;;   :config
+;;   (use-package tern
+;;     :diminish tern-mode
+;;     :init
+;;     (add-hook 'js2-mode-hook 'tern-mode))
+;;   (use-package js-doc)
+;;   (use-package js2-refactor
+;;     :diminish js2-refactor-mode
+;;     :init
+;;     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+;;     :config
+;;     (js2r-add-keybindings-with-prefix "C-c r")))
 
 (use-package web-mode
   :mode (("\\.html?\\'" . web-mode)
@@ -244,30 +287,35 @@
   :mode (("\\.scss\\'" . scss-mode)
          ("\\.postcss\\'" . scss-mode)))
 
-(use-package scala-mode2
-  :config
-  (use-package sbt-mode)
-  (use-package ensime
-    :disabled t
-    :init
-    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+;; (use-package scala-mode2
+;;   :config
+;;   (use-package sbt-mode)
+;;   (use-package ensime
+;;     :disabled t
+;;     :init
+;;     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
 
 (use-package cider
+  :pin melpa-stable
   :config
   (add-hook 'clojure-mode-hook #'cider-mode)
-  (add-hook 'cider-mode-hook #'eldoc-mode)
+  (add-hook 'cider-mode-hook #'rainbow-delimiters-mode)
   (defun my-cider-reset ()
     (interactive)
     (cider-ensure-connected)
     (save-some-buffers)
     (cider-interactive-eval "(user/reset)"))
+  (setq cider-cljs-lein-repl
+        "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
   (global-set-key (kbd "C-c r") #'my-cider-reset)
   (use-package align-cljlet
     :bind ("C-c a l" . align-cljlet)))
 
 (use-package rainbow-delimiters
   :config
-  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
+  (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
 
 (use-package geiser)
 

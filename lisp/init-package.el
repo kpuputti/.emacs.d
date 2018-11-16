@@ -4,6 +4,7 @@
 
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -13,7 +14,7 @@
 
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
+;;(require 'diminish)
 (require 'bind-key)
 
 (provide 'init-package)
