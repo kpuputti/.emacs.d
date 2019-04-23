@@ -10,12 +10,8 @@ break (in theory) on other platforms that Emacs itself supports.
 First, install Emacs through [[http://brew.sh/][Homebrew]]:
 
 #+begin_src sh
-brew install emacs --with-cocoa --with-imagemagick --with-librsvg
+brew cask install emacs
 #+end_src
-
-Then make sure the =emacs= executable and starting from Spotlight
-works (you might have to =brew linkapps emacs= or do some copying to
-get everything working properly).
 
 Then clone this repo to =~/.emacs.d= and start Emacs. First startup
 will take time since it downloads and installs all the required
