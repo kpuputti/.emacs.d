@@ -130,7 +130,8 @@
          ("M-y" . helm-show-kill-ring)
          ("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
-         ("M-s o" . helm-occur))
+         ("M-s o" . helm-occur)
+         ("C-x b" . helm-mini))
   :init
   (require 'helm-config)
   (helm-mode 1)
