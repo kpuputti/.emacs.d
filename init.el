@@ -75,7 +75,9 @@
 
 (use-package undo-tree
   :diminish undo-tree-mode
-  :config (global-undo-tree-mode))
+  :config
+  (setq undo-tree-enable-undo-in-region t)
+  (global-undo-tree-mode))
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
